@@ -44,7 +44,8 @@ root@raspberrypi:/home/pi# apt-get install \
     software-properties-common
 root@raspberrypi:/home/pi# curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 root@raspberrypi:/home/pi# apt-key fringerprint 0EBFCD88
-root@raspberrypi:/home/pi# echo "deb [arch-armhf] https://download.docker.com/linux/debian buster stable" > /etc/apt/sources.list.d/docker.list
+root@raspberrypi:/home/pi# echo "deb [arch-armhf] https://download.docker.com/linux/debian buster stable" > \
+     /etc/apt/sources.list.d/docker.list
 root@raspberrypi:/home/pi# apt-get update
 root@raspberrypi:/home/pi# apt-get install docker-ce docker-ce-cli containerd.io
 ```
@@ -73,8 +74,10 @@ root@raspberrypi:/home/pi# export https_proxy="https://proxy.example.com:port"
 
 > Add proxy to ***<span style="color:#c31c4a">"apt"</span>***
 ```
-root@raspberrypi:/home/pi# echo 'Acquire::http::Proxy "http://proxy.example.com:port/";' > /etc/apt/apt.conf.d/01proxy
-root@raspberrypi:/home/pi# echo 'Acquire::https::Proxy "https://proxy.example.com:port/";' >> /etc/apt/apt.conf.d/01proxy
+root@raspberrypi:/home/pi# echo 'Acquire::http::Proxy "http://proxy.example.com:port/";' > \
+    /etc/apt/apt.conf.d/01proxy
+root@raspberrypi:/home/pi# echo 'Acquire::https::Proxy "https://proxy.example.com:port/";' >> \ 
+    /etc/apt/apt.conf.d/01proxy
 ```
 - ##### *Resource:* [[1]][apt_proxy]
 - ##### *Troubleshooting* [[1]][apt_ts_proxy]
